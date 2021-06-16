@@ -20,10 +20,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: nodenv/node-version
-      uses: nodenv/actions-node-version@v2.0.4
-      with:
-        nodenv-version: 14
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.1.5
+
         
     - name: GitHub Action for Yarn
       uses: Borales/actions-yarn@v2.1.0
