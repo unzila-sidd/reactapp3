@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { useState } from 'react';
-import { Message } from './Message';
 import './App.css';
+import { Message } from './Message.js';
 
 export default function App(){
-  let [count , setCount] = useState(5);
-  let [isMorning , setMorning] = useState(true)
+  let [count , setCount] = useState(1);
+  let [isMorning , setMorning] = useState(true);
 
   return (
-    <div class={`box ${isMorning ? 'dayLight' : ''}`}>
-
-      <h1>Good {isMorning ? 'Morning' : 'Night'}</h1>
-      <Message counter={count} />
-
-      <button onClick={() => setCount(count + 5)}>update count</button>
-      <button onClick={() => setMorning(!isMorning)}>Update day</button>
-
+    <div className={`box ${isMorning ? 'dayLight' : ''}`}>
+      <h1>Good {isMorning ? 'Morning' : 'Night'} </h1> 
+      <Message counter={count} Name="Biryani"/>
+      <button onClick = {() => setCount(count + 1)}>update counter</button>
+      <button onClick = {() => setMorning(!isMorning)}>update day</button>
     </div>
-
   );
 }
